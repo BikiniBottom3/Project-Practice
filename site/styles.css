@@ -167,6 +167,12 @@ ul {
   color: var(--black);
 }
 
+.nav-link--active {
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+}
+
 /* ════════════════════════════════════════════════
    HERO
    ════════════════════════════════════════════════ */
