@@ -10,7 +10,7 @@
 
 ## Задание
 
-Задание размещено в папке **task** в файле [README2.md](https://github.com/BikiniBottom3/Project-Practice/blob/main/task%20/README2.md)
+Задание размещено в папке **task** в файле [README2.md](https://github.com/BikiniBottom3/Project-Practice/blob/main/README2.md)
 
 ## Вариативная часть задания
 
