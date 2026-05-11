@@ -180,7 +180,7 @@ ul {
   padding: 0;
   min-height: calc(100vh - 64px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   align-items: stretch;
   border-bottom: 1px solid var(--line);
 }
@@ -219,21 +219,31 @@ ul {
 }
 
 .hero-visual {
-  border-left: 1px solid var(--line);
   overflow: hidden;
   min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  max-width: 1000px;
+  max-height: 1000px;
   filter: grayscale(20%);
   transition: filter 0.4s;
 }
 
 .hero-visual:hover .hero-img {
   filter: grayscale(0%);
+}
+
+.hero .btn {
+  width: 33.333%;
+  min-width: 180px;
+  text-align: center;
 }
 
 /* ════════════════════════════════════════════════
@@ -333,13 +343,55 @@ ul {
 }
 
 /* Результат */
-.result-text {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
-  font-size: 1.1rem;
+/* Сетка результатов */
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-s);
+  margin-top: var(--gap-l);
+}
+
+/* Карточка */
+.result-card {
+  padding: var(--gap-m);
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--gray);
-  line-height: 1.8;
+  position: relative;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+/* Номер карточки */
+.result-number {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gray-lt);
+  margin-bottom: var(--gap-xs);
+  transition: none; /* номер не меняется */
+}
+
+/* Текст карточки */
+.result-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: inherit; /* наследует цвет от карточки */
+}
+
+/* При наведении: рамка и текст — чёрные, номер — остаётся серым */
+.result-card:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ════════════════════════════════════════════════
